@@ -17,7 +17,7 @@ def deploy():
 def install():
     make_deploy_dir()
     git_clone()
-    make_virtualenv
+    make_virtualenv()
     install_requirements()
     start_gunicorn()
     install_nginx_conf()
@@ -30,7 +30,7 @@ def make_deploy_dir():
     sudo('chown wraithan:users ' + deploy_dir)
 
 def git_clone():
-    with cd(deploy_dir):
+    with cd('/srv/wsgi/'):
         run('git clone git@github.com:wraithan/reciblog.git')
 
 def make_virtualenv():
