@@ -3,7 +3,7 @@ server {
     server_name  wraithan.net;
 
     location /media { 
-        root /srv/wsgi/reciblog/media;
+        root /srv/wsgi/reciblog;
     }
 
     location / {
