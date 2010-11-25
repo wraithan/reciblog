@@ -21,6 +21,7 @@ def install():
     start_gunicorn()
     install_nginx_conf()
     enable_nginx_conf()
+    reload_nginx_conf()
     create_db()
     sync_db()
 
@@ -52,6 +53,8 @@ def install_nginx_conf():
 
 def enable_nginx_conf():
     sudo('ln -s /etc/nginx/sites-available/reciblog /etc/nginx/sites-enabled/reciblog')
+
+def reload_nginx_conf():
     sudo('/etc/rc.d/nginx check')
     sudo('/etc/rc.d/nginx reload')
 
