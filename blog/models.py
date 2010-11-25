@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
 class Entry(models.Model):
     class Status:
         LIVE = 1
@@ -11,5 +11,6 @@ class Entry(models.Model):
             )
     name = models.CharField(max_length=256)
     content = models.TextField()
-    status = models.IntegerField(choices=Status.CHOICES, default=Status.PENDING)
+    status = models.IntegerField(choices=Status.CHOICES,
+                                 default=Status.PENDING)
     recipes = models.ManyToManyField('recipes.Recipe', related_name='entries')
