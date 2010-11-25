@@ -1,0 +1,6 @@
+-r common-requirements.txt
+Fabric
+ipdb
+ipython
+paramiko
+pycrypto
