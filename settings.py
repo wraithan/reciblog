@@ -90,6 +90,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
+    'django.contrib.webdesign',
     'blog',
     'recipes',
     'south',
