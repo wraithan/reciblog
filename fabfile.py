@@ -61,7 +61,7 @@ def create_db():
 
 def sync_db():
     with cd(deploy_dir):
-        virtualenv_run('./manage.py syncdb')
+        virtualenv_run('./manage.py migrate')
 
 def reload_code():
     with cd(deploy_dir):
