@@ -10,9 +10,8 @@ def virtualenv_run(cmd):
 def deploy():
     git_pull()
     install_requirements()
-    reload_code()
-    install_nginx_conf()
     sync_db()
+    reload_code()
 
 def install():
     make_deploy_dir()
