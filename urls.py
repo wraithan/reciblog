@@ -4,7 +4,9 @@ from django.conf.urls.defaults import *
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
+    url(r'^', include('reciblog.blog.urls')),
     # Example:
     # (r'^reciblog/', include('reciblog.foo.urls')),
 
