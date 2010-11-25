@@ -33,6 +33,10 @@ def git_clone():
     with cd('/srv/wsgi/'):
         run('git clone git@github.com:wraithan/reciblog.git')
 
+def git_pull():
+    with cd(deploy_dir):
+        run('git pull')
+
 def make_virtualenv():
     run('mkvirtualenv --no-site-packages reciblog')
 
@@ -42,7 +46,7 @@ def install_requirements():
 
 def start_gunicorn():
     with cd(deploy_dir):
-        virtualenv_run('gunicorn-django --pid=' + deploy_dir + '/gunicorn.pid --workers=8 -b 127.0.0.1:8002 --daemon')
+        virtualenv_run('gunicorn_django --pid=' + deploy_dir + '/gunicorn.pid --workers=8 -b 127.0.0.1:8002 --daemon')
 
 def install_nginx_conf():
     sudo('cp ' + deploy_dir + '/conf/reciblog /etc/nginx/sites-available/reciblog')
