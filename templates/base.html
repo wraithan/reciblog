@@ -6,12 +6,20 @@
     <link rel="stylesheet" href="media/css/reset.css" />
     <link rel="stylesheet" href="media/css/text.css" />
     <link rel="stylesheet" href="media/css/960.css" />
+    <link rel="stylesheet" href="media/css/base.css" />
     <title>Wraithan's Food Blog!</title>
   </head>
   <body>
     <div class="container_12">
       <div class="grid_12" id="header">
 	<h1>Wraithan's food Blog!</h1>
+      </div>
+      <div class="grid_12" id="menu_bar">
+	<ul id="menu_list">
+	  <li class="menu_topic">blogs</li>
+	  <li class="menu_topic">recipies</li>
+	  <li class="menu_topic">about me</li>
+	</ul>
       </div>
       <div class="grid_9" id="content">
 	{% block content %}{% endblock %}
@@ -20,7 +28,7 @@
 	<p>{% lorem 1 p %}</p>
       </div>
       <div class="grid_12" id="footer">
-	<p>{% lorem 1 p %}</p>
+	<p>&copy;Chris McDonald &ndash; Powered by <a href="http://github.com/wraithan/reciblog">reciblog</a> which is licensed under the <a href="http://github.com/wraithan/reciblog/raw/HEAD/LICENSE">simplified BSD license</a>.</p>
       </div>
     </div>
   </body>
