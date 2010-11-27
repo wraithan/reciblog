@@ -1,12 +1,44 @@
+body {
+    background-image: url('/media/images/dark-blue-background.jpg');
+}
+
 #container {
     background-color: white;
 }
 
-body {
-    background-image: url('/media/images/dark-blue-background.jpg');
+#header {
+    width: 960px;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #BBCCFF;
+}
+
+#header h1 {
+    padding: 10px;
+    margin: 0px;
+}
+
+#menu_bar {
+    border: 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 960px;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #BBCCFF;
+}
+
+#menu_list {
+    margin-bottom: 6px;
+    margin-top: 6px;
 }
 
 .menu_topic {
     display: inline;
     list-style-type: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 12px 10px 13px;
 }
