@@ -1,0 +1,13 @@
+
+#content h2 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.date {
+    padding-top: 0;
+    padding-bottom: 5px;
+    margin-top: 0;
+    margin-bottom: 3px;
+    font-size: 80%;
+}
