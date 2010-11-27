@@ -1,9 +1,9 @@
-body {
-    background-image:url('/media/images/dark-blue-background.jpg');
-}
-
 #container {
     background-color: white;
+}
+
+body {
+    background-image: url('/media/images/dark-blue-background.jpg');
 }
 
 .menu_topic {
