@@ -61,6 +61,5 @@ INSTALLED_APPS = (
     'django.contrib.webdesign',
     'blog',
     'recipes',
-    'django_extensions',
     'south',
     )
