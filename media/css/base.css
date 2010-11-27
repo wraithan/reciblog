@@ -1,3 +1,11 @@
+body {
+    background-image:url('/media/images/dark-blue-background.jpg');
+}
+
+#container {
+    background-color: white;
+}
+
 .menu_topic {
     display: inline;
     list-style-type: none;
