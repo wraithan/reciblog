@@ -42,3 +42,21 @@ body {
     margin-right: 0;
     padding: 12px 10px 13px;
 }
+
+#content {
+    margin-top: 5px;
+    padding-top: 5px;
+}
+
+#footer {
+    border: 0;
+    border-top: 1px solid black;
+    width: 960px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#footer p {
+    margin: 5px;
+    padding: 4px;
+}

@@ -4,3 +4,5 @@ ipdb
 ipython
 paramiko
 pycrypto
+-e git+git://github.com/django-extensions/django-extensions.git#egg=django_extensions
+werkzeug
