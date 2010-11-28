@@ -31,6 +31,7 @@ MEDIA_ROOT = os.path.join(SITE_ROOT, 'media/')
 MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/media/admin/'
 SECRET_KEY = 'ydv&wa4j%fm@$$1yc@ie_*1rb_q#%6vyyvq6#g$bydi_3=fzcb'
+FORCE_LOWERCASE_TAGS = True
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',

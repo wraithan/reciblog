@@ -1,6 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 
+import tagging
 
 class Entry(models.Model):
     class Status:
@@ -25,3 +26,6 @@ class Entry(models.Model):
     def save(self):
         self.slug = slugify(self.name)
         super(Entry, self).save()
+
+
+tagging.register(Entry)
