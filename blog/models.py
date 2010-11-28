@@ -12,7 +12,7 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
         ordering = ('title',)
 
-    def __save__(self):
+    def save(self):
         if not self.pk:
             self.slug = slugify(self.title)
         super(Category, self).save()
@@ -53,5 +53,8 @@ class Entry(models.Model):
             self.slug = slugify(self.name)
         super(Entry, self).save()
 
+
+    def __unicode__(self):
+        return self.name
 
 tagging.register(Entry)
