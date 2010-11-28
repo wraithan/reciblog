@@ -1,12 +1,18 @@
-from fabric.api import env, run, cd, sudo
+from fabric.api import env, run, cd, sudo, local, get
 
 
 env.hosts = ['wraithan.net', ]
 deploy_dir = '/srv/wsgi/reciblog/'
 
+dumpdata_apps = 'admin blog auth messages recipes sites south tagging webdesign'
+json_fixture = 'live_data.json'
 
 def virtualenv_run(cmd):
     run('workon reciblog && ' + cmd)
+
+
+def virtualenv_local(cmd):
+    local('workon reciblog && ' + cmd)
 
 
 def deploy():
@@ -28,10 +34,16 @@ def install():
     create_db()
     sync_db()
 
+def load_data_from_live():
+    reset_data()
+    dump_live_data()
+    load_live_data()
+
 
 def full_restart_gunicorn():
     stop_gunicorn()
     start_gunicorn()
+
 
 def make_deploy_dir():
     sudo('mkdir ' + deploy_dir)
@@ -94,3 +106,21 @@ def sync_db():
 def reload_code():
     with cd(deploy_dir):
         sudo('kill -HUP `cat gunicorn.pid`')
+
+
+def reset_data():
+    local('./manage.py flush', capture=False)
+
+
+def dump_live_data():
+    with cd(deploy_dir):
+        virtualenv_run('./manage.py dumpdata %s > %s' % (dumpdata_apps, json_fixture))
+    get('%s/%s' % (deploy_dir, json_fixture), '/home/wraithan/devel/reciblog/')
+
+
+def load_live_data():
+    with cd('/home/wraithan/devel/reciblog'):
+        local('./manage.py loaddata %s' % json_fixture)
+        local('rm %s' % json_fixture)
+    with cd(deploy_dir):
+        virtualenv_run('rm %s' % json_fixture)
