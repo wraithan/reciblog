@@ -21,7 +21,7 @@ class Entry(models.Model):
     publish = models.DateTimeField(blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
-    recipes = models.ManyToManyField('recipes.Recipe', related_name='entries')
+    recipes = models.ManyToManyField('recipes.Recipe', related_name='entries', null=True)
 
     class Meta:
         verbose_name_plural = 'Entries'
