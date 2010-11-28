@@ -3,6 +3,12 @@ from django.template.defaultfilters import slugify
 
 import tagging
 
+
+class Category(models.Model):
+    title = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True)
+
+
 class Entry(models.Model):
     class Status:
         LIVE = 1
@@ -22,6 +28,7 @@ class Entry(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
     recipes = models.ManyToManyField('recipes.Recipe', related_name='entries', blank=True, null=True)
+    categories = models.ManyToManyField(Category, related_name='entries', blank=True, null=True)
 
     class Meta:
         verbose_name_plural = 'Entries'
