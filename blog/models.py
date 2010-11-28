@@ -23,6 +23,11 @@ class Entry(models.Model):
     modified = models.DateTimeField(auto_now=True)
     recipes = models.ManyToManyField('recipes.Recipe', related_name='entries')
 
+    class Meta:
+        verbose_name_plural = 'Entries'
+        ordering = ('-publish',)
+
+
     def save(self):
         self.slug = slugify(self.name)
         super(Entry, self).save()
