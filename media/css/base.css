@@ -3,6 +3,14 @@ body {
     font-family: 'Lucida Grande',Verdana,Arial,Sans-Serif;
 }
 
+p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset {
+    margin-bottom: 10px;
+}
+
+dd {
+    margin-left: 40px;
+}
+
 #container {
     background-color: white;
 }
