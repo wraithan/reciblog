@@ -8,6 +8,19 @@ class Category(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
 
+    class Meta:
+        verbose_name_plural = 'Categories'
+        ordering = ('title',)
+
+    def __save__(self):
+        if not self.pk:
+            self.slug = slugify(self.title)
+        super(Category, self).save()
+
+    def __unicode__(self):
+        return self.title
+
+
 
 class Entry(models.Model):
     class Status:
@@ -36,7 +49,8 @@ class Entry(models.Model):
 
 
     def save(self):
-        self.slug = slugify(self.name)
+        if not self.pk:
+            self.slug = slugify(self.name)
         super(Entry, self).save()
 
 
