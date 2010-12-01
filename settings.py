@@ -33,6 +33,15 @@ ADMIN_MEDIA_PREFIX = '/media/admin/'
 SECRET_KEY = 'ydv&wa4j%fm@$$1yc@ie_*1rb_q#%6vyyvq6#g$bydi_3=fzcb'
 FORCE_LOWERCASE_TAGS = True
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.contrib.messages.context_processors.messages',
+    'blog.context_processors.sidebar',
+    )
+
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
