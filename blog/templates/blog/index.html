@@ -2,7 +2,7 @@
 {% load webdesign %}
 {% block content %}
 {% for entry in latest_entries %}
-<h2>{{ entry.name }}</h2>
+<h2><a href="{{ entry.get_absolute_url }}">{{ entry.name }}</a></h2>
 <p class="date">{{ entry.publish }}</p>
 <p>{{ entry.content|safe }}</p>
 {% endfor %}

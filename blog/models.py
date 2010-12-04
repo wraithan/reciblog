@@ -57,4 +57,13 @@ class Entry(models.Model):
     def __unicode__(self):
         return self.name
 
+    @models.permalink
+    def get_absolute_url(self):
+        return ('entry_detail', (), {
+                'year': self.publish.year,
+                'month': self.publish.month,
+                'day': self.publish.day,
+                'slug': self.slug,
+                })
+
 tagging.register(Entry)
