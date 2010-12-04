@@ -1,0 +1,7 @@
+{% extends "blog/base.html" %}
+{% load webdesign %}
+{% block content %}
+<h2>{{ entry.name }}</h2>
+<p class="date">{{ entry.publish }}</p>
+<p>{{ entry.content|safe }}</p>
+{% endblock %}
