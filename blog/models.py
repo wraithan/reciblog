@@ -12,10 +12,10 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
         ordering = ('title',)
 
-    def save(self):
+    def save(self, *args, **kwarg):
         if not self.pk:
             self.slug = slugify(self.title)
-        super(Category, self).save()
+        super(Category, self).save(*args, **kwarg)
 
     def __unicode__(self):
         return self.title
@@ -48,10 +48,10 @@ class Entry(models.Model):
         ordering = ('-publish',)
 
 
-    def save(self):
+    def save(self, *args, **kwarg):
         if not self.pk:
             self.slug = slugify(self.name)
-        super(Entry, self).save()
+        super(Entry, self).save(*args, **kwarg)
 
 
     def __unicode__(self):
