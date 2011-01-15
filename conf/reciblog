@@ -1,6 +1,6 @@
 server {
     listen       80;
-    server_name  wraithan.net;
+    server_name  reciblog.wraithan.net;
 
     location /media { 
         root /srv/wsgi/reciblog;
